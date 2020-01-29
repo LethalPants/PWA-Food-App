@@ -46,48 +46,7 @@
     </ul>
 
     <!-- recipes -->
-    <div class="recipes container grey-text text-darken-1">
-      <div class="card-panel recipe white row">
-        <img src="/img/dish.png" alt="recipe thumb" />
-        <div class="recipe-details">
-          <div class="recipe-title">Edame Noodles</div>
-          <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
-        </div>
-        <div class="recipe-delete">
-          <i class="material-icons">delete_outline</i>
-        </div>
-      </div>
-      <div class="card-panel recipe white row">
-        <img src="/img/dish.png" alt="recipe thumb" />
-        <div class="recipe-details">
-          <div class="recipe-title">Edame Noodles</div>
-          <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
-        </div>
-        <div class="recipe-delete">
-          <i class="material-icons">delete_outline</i>
-        </div>
-      </div>
-      <div class="card-panel recipe white row">
-        <img src="/img/dish.png" alt="recipe thumb" />
-        <div class="recipe-details">
-          <div class="recipe-title">Edame Noodles</div>
-          <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
-        </div>
-        <div class="recipe-delete">
-          <i class="material-icons">delete_outline</i>
-        </div>
-      </div>
-      <div class="card-panel recipe white row">
-        <img src="/img/dish.png" alt="recipe thumb" />
-        <div class="recipe-details">
-          <div class="recipe-title">Edame Noodles</div>
-          <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
-        </div>
-        <div class="recipe-delete">
-          <i class="material-icons">delete_outline</i>
-        </div>
-      </div>
-    </div>
+    <div class="recipes container grey-text text-darken-1"></div>
 
     <div class="center">
       <a
@@ -107,6 +66,7 @@
               id="title"
               type="text"
               class="validate"
+              required
             />
             <label for="title">Recipe Title</label>
           </div>
@@ -116,11 +76,12 @@
               id="ingredients"
               type="text"
               class="validate"
+              required
             />
             <label for="ingredients">Ingredients</label>
           </div>
           <div class="input-field ">
-            <button class="btn-small">Add</button>
+            <button class="btn-small" type="submit">Add</button>
           </div>
         </form>
       </div>
@@ -128,7 +89,25 @@
         <a class="modal-close waves-effect waves-green btn-flat">close</a>
       </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-firestore.js"></script>
+
+    <script>
+      let firebaseConfig = {
+        apiKey: "AIzaSyA9ItN5ENSyvvtMBJPIFMnwwbgG8bUWgYU",
+        authDomain: "pwa-food-a.firebaseapp.com",
+        databaseURL: "https://pwa-food-a.firebaseio.com",
+        projectId: "pwa-food-a",
+        storageBucket: "pwa-food-a.appspot.com",
+        messagingSenderId: "862877994287",
+        appId: "1:862877994287:web:d78feaa9e4d2a6cadc25da"
+      };
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
     <script src="/js/app.js"></script>
+    <script src="/js/db.js"></script>
     <script src="/js/ui.js"></script>
   </body>
 </html>
